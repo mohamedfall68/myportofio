@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+            color: #EAE6FF;
+            font-family: "Cormorant Garamond", serif;
+
+background: linear-gradient(135deg, #311a4b, #27143d, #1b092e);
+ 
+        }
+
+        button {
+            border: solid;
+            background-color: #9B87F5;
+            border-color: #2A1450;
+            border-radius: 10px;
+            padding: 12px 24px;
+        }
+
+
+        .skills {
+            width: 60%;
+            font-family: Arial;
+        }
+
+        .skill {
+            margin: 20px 0;
+        }
+
+        .bar {
+            width: 200px;
+            height: 10px;
+            background: #1c1c1c;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #7a3cff, #b68cff);
+            overflow: hidden;
+        }
+
+
+
+        .html {
+            width: 90%;
+        }
+
+        .css {
+            width: 85%;
+        }
+
+        .responsive {
+            width: 70%;
+        }
+
+        .vscode {
+            width: 60%;
+        }
+
+        .networking {
+            width: 50%;
+        }
+
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            /* Espace entre le texte et la photo */
+            align-items: center;
+            /* Aligne verticalement au centre */
+            gap: 30px;
+            padding: 0 50px;
+            /* Espace entre le texte et l'image */
+        }
+
+        .content {
+            flex: 1;
+            /* Prend l'espace disponible */
+        }
+
+        .photo {
+            flex-shrink: 0;
+            /* Empêche la photo de rétrécir */
+
+        }
+
+        .photo img {
+            max-width: 300px;
+            /* Ajustez selon votre besoin */
+            height: auto;
+            border-radius: 50%;
+            /* Optionnel : coins arrondis */
+
+        }
+
+        .IS {
+            font-size: 30px;
+        }
+
+        .sia {
+            font-size: 30px;
+            text-align: justify;
+        }
+
+        .competences {
+            text-align: justify;
+            font-size: 70px;
+            color: #967bb6;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        span {
+
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            color: #967bb6;
+        }
+
+        /* Section Projets - Sans liens */
+        .section-projets {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .titre-section {
+            font-size: 2.5em;
+            color: #967bb6;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        .grille-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(150, 123, 182, 0.2);
+            border: 2px solid #d9c5f0;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            border-color: #967bb6;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background: #e6d9ff;
+            border-bottom: 3px solid #b39eb5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #7a5d9e;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+
+        .card-contenu {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-titre {
+            font-size: 1.3em;
+            color: #5d4a7a;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            color: #4a4a4a;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e6d9ff;
+            color: #5d4a7a;
+            border-radius: 30px;
+            font-size: 0.8em;
+            font-weight: 500;
+            border: 1px solid #d9c5f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grille-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grille-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section.timeline {
+            border-left: 3px solid #bd9de3;
+            /* ligne verticale violet clair */
+            margin-left: 30px;
+            /* décalage depuis le bord de la page */
+            padding-left: 20px;
+            /* espace pour que le texte ne touche pas la ligne */
+            padding-bottom: 10px;
+        }
+
+        /* Chaque étape */
+        .Temps {
+            margin-top: 30px;
+            /* espace entre les étapes */
+            position: relative;
+            /* nécessaire pour le point ::before */
+
+        }
+
+        /* Point sur la ligne */
+        .Temps::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background-color: #b9a1db;
+            /* violet foncé */
+            border-radius: 50%;
+            display: inline-block;
+            /* pour pouvoir donner taille + rester sur la ligne */
+            margin-left: -26px;
+            /* pour que le point soit sur la ligne verticale */
+            border: 2px solid #f2f2f2;
+            /* contour blanc */
+        }
+
+        /* Date */
+        .date {
+            font-weight: bold;
+            color: #9d6dd7;
+            /* violet clair pour les dates */
+            font-size: x-large;
+        }
+
+        .Pparc {
+            font-size: larger;
+        }
+
+        .H1P {
+            font-size: 2.5em;
+            color: #967bb6;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 300px;
+            text-decoration: underline;
+            text-underline-offset: 15px;
+
+        }
+
+
+        form {
+            width: 400px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            /* Supprimez height: 120px; */
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        /* Chaque groupe de champ */
+        fieldset div {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            width: 140px;
+            /* Largeur fixe pour aligner tous les inputs */
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #967bb6;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .validbutton {
+            background-color: #967bb6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 50%;
+            margin-left: 34%;
+        }
+
+        .validbutton:hover {
+            background-color: #a454bd;
+            transform: scale(1.1);
+        }
+
+        .H2P {
+            font-size: 2.5em;
+            color: #967bb6;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .H2PP {
+            text-align: center;
+            font-size: xx-large;
+            font-style: italic;
+        }
+
+        .Acceuil {}
+
+        .propos {height: 600px;}
+
+        .projets {height: 600px;}
+
+        .timeline {
+            
+        }
+
+        .Contacts {
+            padding: 20px;
+            height: 610px;
+        }
+
+        footer {
+            background-color: #967bb6;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .footernom {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 40px;
+            color: #331b5e;
+        }
+
+        .footcontacts {
+            margin-bottom: 15px;
+        }
+
+        .footcontacts a {
+
+            color: #331b5e;
+            margin: 0 10px;
+            font-size: 30px;
+            text-underline-offset: 20px;
+
+
+        }
+
+
+        .retourtop {
+            display: inline-block;
+            margin-top: 10px;
+            color: #331b5e;
+            font-size: 20px;
+            text-underline-offset: 10px;
+
+        }
+
+        .retourtop:hover {
+            color: rgba(90, 9, 9, 0.792);
+
+        }
+
+        header {
+            background-color: #967bb6;
+            color: #331b5e;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            margin-bottom: 30%;
+        }
+
+        nav ul {
+
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            justify-content: flex-end;
+        }
+      
+
+        nav a {
+
+            padding: 10px;
+            font-weight: 900;
+            text-underline-offset: 4px;
+
+
+
+        }
+        
+        nav a:hover {
+            text-underline-offset: 10px;
+            border: solid;
+            border-radius: 8px;
+            background-color: white;
+            border-color: #331b5e;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        .H1acc {
+            text-align: left;
+            padding-top: -50%;
+
+        }
+
+        section {
+            background-color: #301f4f;
+            margin-bottom: 45%;
+            height: 500px;
+            padding: 50px;
+            border: solid;
+            border-color: white;
+            border-radius: 8px;
+            border: double;
+            border-width:  8px;
+            margin-left: 25px;
+            margin-right: 25px;
+            padding-left: -10px;
+            
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <h1 class="H1acc">Mohamed Fall</h1>
+        <nav>
+            <ul>
+                <li><a href="#Acceuil">Acceuil</a></li>
+                <li><a href="#A propos">A propos</a></li>
+                <li><a href="#Mes projets">Mes Projets</a></li>
+                <li><a href="#parcourspart">Mon parcours</a></li>
+                <li><a href="#contactpart">Contacts</a></li>
+                <li><a href="#footpart">Pied de page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Acceuil" class="Accueil">
+            <strong>
+                <h1>Mohamed FALL</h1>
+            </strong>
+            <p>Étudiant en licence 1 Informatique</p><br>
+            <p>Chaque projet est une opportunité de créer,d'apprendre et d'innover.
+                Entre Code et Réseaux,j'explore l'univers numérique. </p>
+            <button><a href="#Mes projets">Voir mes projets</a></button>
+        </section>
+
+        <section id="A propos" class="propos">
+            <div class="container">
+                <div class="content">
+                    <p class="sia">
+                        Je m'appelle Mohamed FALL, étudiant en première année &lt;GLAR&gt; <br>
+                        Je suis passionné par le développement web <br>
+                        et les nouvelles technologies📱. <br> </p>
+                    <br>
+                    <br>
+                    <br>
+                    <p class="IS">
+                        <Span>Filière</Span>: Génie Logiciel et Administration Réseaux <br>
+                        <span>Université</span>: École Supérieur de Technologie et de Management <br>
+                        <span>Année Académique</span>: 2025-2026 <br>
+                    </p>
+
+                    <div class="competences">Mes compétences</div>
+
+                    <div class="skill">
+                        <p>HTML</p>
+                        <div class="bar">
+                            <div class="progress html"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+
+                        <p>CSS</p>
+                        <div class="bar">
+                            <div class="progress responsive"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>Vscode</p>
+                        <div class="bar">
+                            <div class="progress vscode"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>Networking(Notions)</p>
+                        <div class="bar">
+                            <div class="progress networking"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="photo">
+                    <img src="images/moha.jpeg" alt="Mid, i know right!!">
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="projets" id="Mes projets">
+            <h1 class="titre-section">Mes Projets <img src="images/work icon.png" alt=""></h1>
+
+            <div class="grille-cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/08.png" alt="Projet 1">
+                    </div>
+                    <div class="card-contenu">
+                        <h3 class="card-titre">Nature:Beauty and variety</h3>
+                        <p class="card-description">Un devoir de classe qui s'est soldé en une magnifique réflexion sur
+                            la nature,
+                            représentée sur 3 images agencés avec Flexbox et suivi d'un formulaire pour contacter
+                            l'artiste(moi-même)</p>
+                        <div class="card-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">Flexbox</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/lecteur.png" alt="">
+                    </div>
+                    <div class="card-contenu">
+                        <h3 class="card-titre">Lecteur en ligne</h3>
+                        <p class="card-description">Lecteur audio en ligne entièrement codé en HTML/CSS lors d'un
+                            exercice pratique en cours.Il permet de lire des audios</p>
+                        <div class="card-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/stade.png" alt="Stade Abdoulaye Wade">
+                    </div>
+                    <div class="card-contenu">
+                        <h3 class="card-titre">Stade Abdoulaye Wade</h3>
+                        <p class="card-description">Page web qui présente le Stade Abdoulaye wade,
+                            relate son histoire et indique sa légitimité dans
+                            le patrimoine sénégalais.En bas de page,vous pouvez appuier sur un lien qui vous redirigera
+                            vers une autre page où vous trouverez la localisation du stade grâce à une carte intégrée.
+                        </p>
+                        <div class="card-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">Iframe</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/form.png" alt="">
+                    </div>
+                    <div class="card-contenu">
+                        <h3 class="card-titre">Formulaire d'inscription ✅</h3>
+                        <p class="card-description">Personnalisé , il est accompagné d'un lieu menant vers un tableau
+                            relevant certaines personnes inscrites.</p>
+                        <div class="card-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <h1 class="H1P" id="parcourspart"> Mon Parcours/Formation <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#B2A8D3">
+                <path
+                    d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z" />
+            </svg></h1>
+
+
+        <section class="timeline">
+            <div class="Temps">
+                <p class="date">04 Juillet 2025</p>
+                <h3 class="Pparc">Baccalauréat</h3>
+                <p class="Pparc"> Acquisition du BAC littéraire d'office </p>
+            </div>
+
+            <div class="Temps">
+                <p class="date">Août 2025</p>
+                <h3 class="Pparc">Inscription à l’université</h3>
+                <p class="Pparc">Inscrit à l'Ecole Supérieur de Technologie et de Management en section informatique.
+                </p>
+            </div>
+
+            <div class="Temps">
+                <p class="date">Octobre 2025- Juillet 2026</p>
+                <h3 class="Pparc">Licence 1</h3>
+                <p class="Pparc">Licence en Génie logiciel et Administration réseau </p>
+            </div>
+
+        </section>
+
+        <section id="contactpart" class="Contacts">
+
+            <h2 class="H2PP"> Si vous êtes interessé par notre profil, soumettez vos coordonnées je vous prie.
+                Un message vous sera envoyé sous peu.</h2>
+            <form class="contact" method="get">
+                <fieldset>
+                    <legend>Vos Coordonnées</legend>
+
+                    <div>
+                        <label for="Nom">Nom</label>
+                        <input type="text" id="Nom" name="Nom" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div>
+                        <label for="Sujets">Sujet à discuter</label>
+                        <select name="Sujet" id="Sujet">
+                            <option value="FI">Le canva du formulaire d'inscription</option>
+                            <option value="NB">La thématique de la nature</option>
+                            <option value="SAW">Le Stade Abdoulaye Wade</option>
+                            <option value="LA">Le lecteur audio</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button class="validbutton">Soumettre</button>
+            </form>
+
+
+            <h2 class="H2PP">Sinon vous pouvez nous joindre directement avec nos liens de contacts ci-dessus</h2>
+
+
+            <ul class="listecontact">
+                <p class="H2P"> +221 70 836 91 38 ou au 77 226 75 68 (tous deux disponibles sur whatsapp) <br>
+                    xmbfall@gmail.com <br>
+                    mohafall06 sur instagram <br>
+                    Mohamed FALL sur linkedIn <br>
+                </p>
+            </ul>
+        </section>
+
+
+    </main>
+
+
+    <footer id="footpart">
+        <div class="footer-container">
+
+            <p class="footernom">Mohamed Fall — 2026</p>
+
+            <div class="footcontacts">
+                <a href="https://www.instagram.com/mohafall06?igsh=a3F0Z3p0Z29oc3Ux&utm_source=qr"
+                    target="_blank">Instagram</a>
+                <a href="https://linkedin.com/in/tonprofil" target="_blank">LinkedIn</a>
+                <a href="mailto:tonemail@gmail.com" target="_blank">Gmail</a>
+            </div>
+
+            <a href="#top" class="retourtop">Retour en haut de page</a>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

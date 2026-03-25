@@ -237,36 +237,71 @@ background: linear-gradient(135deg, #311a4b, #27143d, #1b092e);
                 grid-template-columns: 1fr;
             }
         }
+        @media (max-width: 1023px) {
 
-        section.timeline {
-            border-left: 3px solid #bd9de3;           
-            margin-left: 30px;            
-            padding-left: 20px;            
-            padding-bottom: 10px;
-        }       
-        .Temps {
-            margin-top: 30px;           
-            position: relative;            
+  section {
+    display: flex;
+    flex-direction: column;
+  }
 
-        }
-       
-        .Temps::before {
-            content: "";
-            width: 12px;
-            height: 12px;
-            background-color: #b9a1db;
-            border-radius: 50%;
-            display: inline-block;            
-            margin-left: -26px;            
-            border: 2px solid #f2f2f2;
-        }
+  .grille-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+}
+            @media (max-width: 768px) {
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grille-cards {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+      
+
+            section.timeline {
+                border-left: 3px solid #bd9de3;           
+                margin-left: 30px;            
+                padding-left: 20px;            
+                padding-bottom: 10px;
+            }       
+            .Temps {
+                margin-top: 30px;           
+                position: relative;            
+
+            }
         
-        .date {
-            font-weight: bold;
-            color: #9d6dd7;            
-            font-size: x-large;
-        }
+            .Temps::before {
+                content: "";
+                width: 12px;
+                height: 12px;
+                background-color: #b9a1db;
+                border-radius: 50%;
+                display: inline-block;            
+                margin-left: -26px;            
+                border: 2px solid #f2f2f2;
+            }
+
+            
+            .date {
+                font-weight: bold;
+                color: #9d6dd7;            
+                font-size: x-large;
+            }
 
         .Pparc {
             font-size: larger;
